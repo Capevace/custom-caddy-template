@@ -4,7 +4,13 @@
 > My personal customized Caddy v2 template
 
 ## How to use
-Add the following to your Caddyfile security section:
+Clone the repository to somewhere on your machine.
+
+```bash
+git clone https://github.com/Capevace/custom-caddy-template custom-template
+```
+
+And add the following to your Caddyfile security section:
 
 ```
 {
@@ -16,11 +22,11 @@ Add the following to your Caddyfile security section:
         			...
 				
         
-        			template generic "/home/services/volumes/caddy/custom-template/templates/generic.template"
-				template portal "/home/services/volumes/caddy/custom-template/templates/portal.template"
-				template login "/home/services/volumes/caddy/custom-template/templates/login.template"
-				template sandbox "/home/services/volumes/caddy/custom-template/templates/sandbox.template"
-				custom css path "custom-template/css/output.css"
+        			template generic "/PATH/TO/custom-template/templates/generic.template"
+				template portal "/PATH/TO/custom-template/templates/portal.template"
+				template login "/PATH/TO/custom-template/templates/login.template"
+				template sandbox "/PATH/TO/custom-template/templates/sandbox.template"
+				custom css path "/PATH/TO/custom-template/css/output.css"
 				
 				
 				...
