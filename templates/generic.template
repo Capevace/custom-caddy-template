@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>{{ .Title }} - Datenregal</title>
+	<link rel="stylesheet" type="text/css" href="/auth/assets/css/custom.css" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<link rel="icon" href="/favicon.png">
+</head>
+
+<body class="app-background h-screen text-white antialiased font-sans flex justify-center items-center">
+
+	<div class="max-w-2xl w-full bg-violet-600 rounded-2xl p-5 m-3 divs sm:mb-32">
+		{{ if .LogoURL }}
+			<a href="{{ pathjoin .ActionEndpoint }}" class="flex justify-center items-center w-full mb-4 block" >
+				<img class="mx-auto" src="{{ .LogoURL }}" alt="{{ .LogoDescription }}" width="72" height="72">
+			</a>
+		{{ end }}
+		
+		<h4 class="mb-3 text-xl text-center font-bold text-violet-200">{{ .Title }}</h4>
+			
+		{{ if .Data.go_back_url }}
+			<a href="{{ .Data.go_back_url }}" class="block text-center text-violet-300">
+				Go Back
+			</a>
+		{{ end }}
+	</div>
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400|500" rel="stylesheet" />
+</body>
+
+</html>

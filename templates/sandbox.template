@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>{{ .Title }} - Datenregal</title>
+	<link rel="stylesheet" type="text/css" href="/auth/assets/css/custom.css" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<link rel="icon" href="/favicon.png">
+</head>
+
+<body class="app-background h-screen text-white antialiased font-sans flex justify-center items-center">
+
+	<form action='/sandbox/{{ pathjoin .Data.id "password-auth" }}' method="post"
+		class="max-w-2xl bg-violet-600 rounded-2xl p-5 m-3 forms sm:mb-32">
+		<h1 class="text-2xl font-bold mb-5 w-full text-center text-violet-200">Password Authentication</h1>
+		<div class="text-violet-200 text-sm mb-5">{{ .Data.error }}</div>
+
+		<div class="flex flex-wrap mb-8 w-full">
+			<label for="secret" class="w-full text-xs mb-2 font-medium text-violet-lighter">Password</label>
+			<input type="password" id="secret" name="secret" autocomplete="secret" class="" required />
+		</div>
+
+		<input id="sandbox_id" name="sandbox_id" type="hidden" value="{{ .Data.id }}" />
+
+		<div class="submit-container">
+			<button type="submit" id="login-button" class="w-full flex items-center justify-center">
+				<div class="label">Login</div>
+				<div class="spinner w-6 hidden">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="fill-current animate-spin">
+						<path
+							d="M456.433 371.72l-27.79-16.045c-7.192-4.152-10.052-13.136-6.487-20.636 25.82-54.328 23.566-118.602-6.768-171.03-30.265-52.529-84.802-86.621-144.76-91.424C262.35 71.922 256 64.953 256 56.649V24.56c0-9.31 7.916-16.609 17.204-15.96 81.795 5.717 156.412 51.902 197.611 123.408 41.301 71.385 43.99 159.096 8.042 232.792-4.082 8.369-14.361 11.575-22.424 6.92z" />
+					</svg>
+				</div>
+			</button>
+		</div>
+	</form>
+</body>
+
+</html>

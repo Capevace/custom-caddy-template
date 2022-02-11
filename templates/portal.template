@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="app-background">
+
+<head>
+	<title>{{ .Title }} - Datenregal</title>
+	<link rel="stylesheet" type="text/css" href="/auth/assets/css/custom.css" />
+	<!-- <link rel="stylesheet" href="{{ pathjoin .ActionEndpoint " /assets/line-awesome/line-awesome.css" }}" /> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<link rel="icon" href="/favicon.png">
+</head>
+
+<body class="app-background min-h-screen text-white antialiased font-sans">
+	<div class="app-background"></div>
+	<!-- <ul class="flex flex-wrap w-full items-start  px-4 py-4 gap-5">
+		{{range .PrivateLinks}}
+		<li class="flex items-center  gap-5 bg-violet-700 text-violet-200 px-8 py-6 rounded-md text-lg">
+			{{ if .IconEnabled -}}
+			<i class="icon text-violet-600 {{ .IconName }}"></i>
+			{{- end }}
+			<a href="{{ .Link }}" {{ if .TargetEnabled }} target="{{ .Target }}" {{ end }}>{{ .Title }}</a>
+		</li>
+		{{ end }}
+	</ul> -->
+
+	<main class="w-full px-5 md:px-10 py-10 flex flex-col gap-10">
+		<header class="w-full flex items-center justify-between gap-5 mb-10">
+			<div class="flex justify-start items-center gap-5">
+				{{ if .LogoURL }}
+				<img class="d-block mx-auto mb-2" src="{{ .LogoURL }}" alt="{{ .LogoDescription }}" width="72"
+					height="72">
+				{{ end }}
+
+				<h1 class="text-3xl font-semibold text-violet-300 items-center gap-2">
+					Welcome
+				</h1>
+			</div>
+			<a href="{{ pathjoin .ActionEndpoint " /logout" }}"
+				class="block bg-violet-400 px-3 py-2 rounded-lg text-base font-semibold text-violet-800">
+				Logout
+			</a>
+		</header>
+
+		<article>
+			<section>
+				<nav class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 w-full items-stretch gap-5 max-w-screen-xl mx-auto">
+					{{range .PrivateLinks}}
+					<a class="flex md:flex-wrap items-center gap-2 bg-violet-600 border-4 border-transparent hover:border-violet-500 group text-violet-200 px-8 py-6 rounded-md text-xl font-semibold"
+						href="{{ .Link }}" {{ if .TargetEnabled }} target="{{ .Target }}" {{ end }}>
+						{{ if .IconEnabled -}}
+						<i class="icon text-violet-700 {{ .IconName }} w-16 md:w-full inline-flex items-center justify-center md:mb-2"></i>
+						{{- end }}
+
+						<span class="flex-1 text-left md:text-center">{{ .Title }}</span>
+					</a>
+					{{ end }}
+				</nav>
+			</section>
+			<section>
+
+			</section>
+		</article>
+	</main>
+
+	<!-- <div class="max-w-2xl min-w-md bg-violet-600 rounded-2xl md:my-5 p-5 mx-3 divs">
+		{{ if .LogoURL }}
+		<div class="flex justify-center items-center">
+			<img class="d-block mx-auto mb-2" src="{{ .LogoURL }}" alt="{{ .LogoDescription }}" width="72" height="72">
+		</div>
+		{{ end }}
+
+		<h4 class="mb-3 text-xl text-center font-bold text-violet-200">{{ .Title }}</h4>
+
+		<ul class="flex flex-col w-full items-start justify-center px-4 py-4 gap-3">
+			{{range .PrivateLinks}}
+			<li class="bg-violet-700 text-violet-200 px-3 py-2 text-lg w-full">
+				{{ if .IconEnabled -}}
+				<i class="{{ .IconName }}"></i>
+				{{- end }}
+				<a href="{{ .Link }}" {{ if .TargetEnabled }} target="{{ .Target }}" {{ end }}>{{ .Title }}</a>
+			</li>
+			{{ end }}
+		</ul>
+
+		<a href="{{ pathjoin .ActionEndpoint " /logout" }}" class="block text-center text-violet-300">
+			Logout
+		</a>
+	</div> -->
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400|500" rel="stylesheet" />
+	<script src="https://kit.fontawesome.com/2a8c421f60.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+
+
+.app-background {
+	background: #6d28d9;
+}
+
+.icon {
+	font-size: 3rem;
+}
+
+div.app-background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+}
+
+main {
+	padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.forms-select {
+	@apply block 
+		w-full 
+		py-2 px-3 
+		text-violet-200 font-semibold sm:text-sm
+		border-2 border-transparent 
+		bg-violet-700 
+		rounded-lg 
+		hover:shadow-lg 
+		focus:shadow-lg 
+		focus:outline-none 
+		focus:border-violet-500
+		hover:border-violet-500
+		placeholder-violet-400
+		disabled:hover:border-transparent disabled:opacity-60 
+		disabled:cursor-default disabled:shadow-none;
+}
+
+.forms-input-text {
+	@apply px-4 py-2
+		text-sm font-semibold
+		text-violet-200 placeholder-violet-400
+		bg-violet-700 
+		w-full 
+		rounded-lg 
+		border-2 border-transparent 
+		hover:shadow-lg 
+		focus:shadow-lg 
+		focus:outline-none 
+		hover:border-violet-500
+		focus:border-violet-500
+		disabled:hover:border-transparent disabled:opacity-60 
+		disabled:cursor-default disabled:shadow-none;
+}
+
+.forms-helper-scale {
+	@apply transform active:scale-95 disabled:active:scale-100;
+}
+
+.forms-button {
+	@apply forms-helper-scale;
+
+	@apply px-5
+		py-2
+		rounded-lg
+		transition-all duration-75
+		text-violet-200 
+		font-semibold
+		border-2 border-violet-700 
+		hover:border-violet-500
+		focus:outline-none
+		focus:border-violet-500
+		disabled:hover:border-transparent disabled:opacity-75 
+		disabled:cursor-default disabled:shadow-none
+		bg-violet-700
+		hover:shadow-lg;
+}
+
+.forms-button-text {
+	@apply forms-helper-scale;
+
+	@apply text-violet-400 
+		font-semibold text-xs 
+		opacity-75
+		hover:opacity-50  active:opacity-100 
+		focus:outline-none;
+}
+
+.forms-main-button {
+	@apply forms-helper-scale;
+
+	@apply px-5
+		py-2
+		rounded-lg
+		transition-all duration-75
+		text-violet-100 
+		font-semibold 
+		bg-gradient-to-b from-violet-500 to-violet-600
+				  active:from-violet-700 active:to-violet-800 
+		shadow-lg;
+}
+
+.forms-label {
+	@apply block text-sm font-semibold text-violet-300 mb-2;
+}
+
+.forms-label-xs {
+	@apply text-xs forms-label;
+}
+
+.forms select {
+	@apply forms-select;
+}
+
+.forms button {
+	@apply forms-button;
+}
+
+.forms input {
+	@apply forms-input-text;
+}
+
+.forms label {
+	@apply forms-label;
+}
+
+@tailwind utilities;
+
+/* On uncustomized pages not setting this would fuck up the buttons cause of tailwind */
+.btn {
+	background-color: #03a9f4 !important;
+}
