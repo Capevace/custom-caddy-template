@@ -1,7 +1,7 @@
 ![](resources/screenshot-1.png)
 
-# custom-caddy-template
-> My personal customized Caddy v2 template
+# Custom caddy-security template
+> My personal customized caddy-security template, built with [Tailwind](tailwindcss.com/)
 
 ## How to use
 Clone the repository to somewhere on your machine.
