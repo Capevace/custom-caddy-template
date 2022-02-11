@@ -1,3 +1,5 @@
+![](resources/screenshot-1.png)
+
 # custom-caddy-template
 > My personal customized Caddy v2 template
 
@@ -29,3 +31,7 @@ Add the following to your Caddyfile security section:
       
 ...
 ```
+
+## Screenshot
+![](resources/screenshot-2.png)
+![](resources/screenshot-3.png)
